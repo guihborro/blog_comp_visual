@@ -1,0 +1,37 @@
+# Configuração do site (Jekyll + GitHub Pages)
+title: "Computação Visual"
+tagline: "Blog da disciplina — 2026.2"
+description: >-
+  Blog de estudos da disciplina de Computação Visual (2026.2).
+  Aqui compartilho artigos, algoritmos, tecnologias e reflexões
+  sobre imagens, gráficos e visão computacional.
+author: "Guilherme"
+
+# Tema oficial suportado pelo GitHub Pages
+theme: minima
+
+# Aparência do tema minima (classic, dark, solarized, auto)
+minima:
+  skin: dark
+
+# Links do menu de navegação (páginas com "layout: page")
+header_pages:
+  - sobre.md
+
+# Idioma
+lang: pt-BR
+
+# Como as URLs dos posts são geradas
+permalink: /posts/:title/
+
+# Plugins padrão do GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Ignorar estes arquivos no build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
