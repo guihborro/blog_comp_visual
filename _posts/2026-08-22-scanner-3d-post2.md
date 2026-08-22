@@ -2,6 +2,7 @@
 layout: post
 title: "Como um scanner transforma um quarto num modelo 3D"
 date: 2026-08-22
+numero: 2
 categories: [3d, geometria]
 tags: [scanner 3d, nuvem de pontos, mesh, profundidade]
 ---
