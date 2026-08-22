@@ -2,6 +2,7 @@
 layout: post
 title: "Computação Visual?"
 date: 2026-08-20
+numero: 1
 categories: [aulas]
 tags: [computação visual, imagens, pixels, rgb]
 ---
