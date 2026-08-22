@@ -1,22 +1,40 @@
 ---
 # Sobrescreve o main.scss do tema minima para adicionar estilo próprio.
-# O bloco abaixo segue a estrutura do minima usado pelo GitHub Pages.
+# O tema minima 2.5.1 (usado pelo GitHub Pages) é claro por padrão,
+# então o modo escuro abaixo é feito manualmente com CSS.
 ---
 
 @charset "utf-8";
 
-@import
-  "minima/skins/{{ site.minima.skin | default: 'classic' }}",
-  "minima/initialize";
+@import "minima";
 
 /* ==========================================================================
-   Identidade visual própria — sobrescreve o tema minima
+   Identidade visual própria — tema escuro + cores de destaque
    ========================================================================== */
 
 $cv-accent: #6c8cff;   /* azul-violeta */
 $cv-accent-2: #21d4b4; /* verde-água   */
 
-/* Título do site com um degradê de destaque */
+$cv-bg: #0d1117;       /* fundo        */
+$cv-bg-elev: #161b22;  /* fundo elevado (header, código) */
+$cv-text: #c9d1d9;     /* texto        */
+$cv-muted: #8b949e;    /* texto suave  */
+$cv-border: #30363d;   /* bordas       */
+
+/* Fundo e texto gerais */
+body {
+  background-color: $cv-bg;
+  color: $cv-text;
+}
+
+/* Cabeçalho do site com faixa colorida no topo */
+.site-header {
+  background-color: $cv-bg-elev;
+  border-top: 4px solid $cv-accent;
+  border-bottom: 1px solid $cv-border;
+}
+
+/* Título do site com degradê */
 .site-title,
 .site-title:visited {
   font-weight: 700;
@@ -27,12 +45,22 @@ $cv-accent-2: #21d4b4; /* verde-água   */
   -webkit-text-fill-color: transparent;
 }
 
-/* Faixa colorida no topo da página */
-.site-header {
-  border-top: 4px solid $cv-accent;
+/* Menu de navegação */
+.site-nav {
+  background-color: $cv-bg-elev;
+  border-color: $cv-border;
+
+  .page-link,
+  .page-link:visited {
+    color: $cv-text;
+  }
+
+  .menu-icon > svg path {
+    fill: $cv-muted;
+  }
 }
 
-/* Links na cor de destaque */
+/* Links */
 a,
 a:visited {
   color: $cv-accent;
@@ -40,23 +68,71 @@ a:visited {
 
 a:hover {
   color: $cv-accent-2;
+  text-decoration: none;
 }
 
-/* Títulos dos posts na lista da home sem sublinhado */
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+  color: #f0f6fc;
+}
+
+/* Lista de posts na home */
+.post-link,
 .post-list h3 a {
   text-decoration: none;
 }
 
-/* Data dos posts mais discreta */
 .post-meta {
-  opacity: 0.85;
+  color: $cv-muted;
 }
 
-/* Melhor leitura no corpo dos posts */
+/* Corpo dos posts */
 .post-content {
   line-height: 1.75;
 }
 
 .post-content strong {
   color: $cv-accent-2;
+}
+
+/* Blocos de código */
+code,
+pre {
+  background-color: $cv-bg-elev;
+  border: 1px solid $cv-border;
+  color: #e6edf3;
+}
+
+pre code {
+  border: 0;
+}
+
+/* Citações */
+blockquote {
+  color: $cv-muted;
+  border-left: 4px solid $cv-accent;
+}
+
+/* Rodapé */
+.site-footer {
+  border-top: 1px solid $cv-border;
+}
+
+.site-footer,
+.footer-col-wrapper {
+  color: $cv-muted;
+}
+
+/* Tabelas */
+table {
+  color: $cv-text;
+  border-color: $cv-border;
+
+  th, td { border-color: $cv-border; }
+  th { background-color: $cv-bg-elev; }
+  tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.03); }
+}
+
+hr {
+  border-color: $cv-border;
 }
