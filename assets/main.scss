@@ -1,0 +1,62 @@
+---
+# Sobrescreve o main.scss do tema minima para adicionar estilo próprio.
+# O bloco abaixo segue a estrutura do minima usado pelo GitHub Pages.
+---
+
+@charset "utf-8";
+
+@import
+  "minima/skins/{{ site.minima.skin | default: 'classic' }}",
+  "minima/initialize";
+
+/* ==========================================================================
+   Identidade visual própria — sobrescreve o tema minima
+   ========================================================================== */
+
+$cv-accent: #6c8cff;   /* azul-violeta */
+$cv-accent-2: #21d4b4; /* verde-água   */
+
+/* Título do site com um degradê de destaque */
+.site-title,
+.site-title:visited {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, $cv-accent, $cv-accent-2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Faixa colorida no topo da página */
+.site-header {
+  border-top: 4px solid $cv-accent;
+}
+
+/* Links na cor de destaque */
+a,
+a:visited {
+  color: $cv-accent;
+}
+
+a:hover {
+  color: $cv-accent-2;
+}
+
+/* Títulos dos posts na lista da home sem sublinhado */
+.post-list h3 a {
+  text-decoration: none;
+}
+
+/* Data dos posts mais discreta */
+.post-meta {
+  opacity: 0.85;
+}
+
+/* Melhor leitura no corpo dos posts */
+.post-content {
+  line-height: 1.75;
+}
+
+.post-content strong {
+  color: $cv-accent-2;
+}
