@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Embeddings: como o computador sabe que duas imagens são parecidas"
-date: 2026-10-15
+date: 2026-09-25
 numero: 6
 categories: [ia, visão computacional]
 tags: [embeddings, vetores, cnn, clip, busca por imagem]
